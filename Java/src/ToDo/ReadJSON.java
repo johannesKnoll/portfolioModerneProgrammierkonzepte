@@ -13,7 +13,6 @@ public class ReadJSON {
 
     private JSONParser jsonParser;
     private Object object;
-
     private JSONObject jsonObject;
     private JSONArray jsonArray;
 
