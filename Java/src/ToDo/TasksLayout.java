@@ -3,10 +3,7 @@ package ToDo;
 import org.json.simple.JSONObject;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-import javax.swing.border.TitledBorder;
+import javax.swing.border.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -75,7 +72,10 @@ public class TasksLayout extends JPanel {
 
     public JButton getDoneButton(String text){
         JButton done = new JButton(text);
-        done.setBorder(new RoundedBorder(10));
+        Border emptyBorder = new EmptyBorder(5, 5, 5, 5);
+        RoundedBorder roundedBorder = new RoundedBorder(10);
+        CompoundBorder compoundBorder = new CompoundBorder(emptyBorder, roundedBorder);
+        done.setBorder(compoundBorder);
         done.addActionListener(actionListenerDone);
         done.setForeground(Color.white);
         done.setBackground(Color.black);
@@ -100,7 +100,10 @@ public class TasksLayout extends JPanel {
 
     public JButton getDeleteButton(String text){
         JButton delete = new JButton(text);
-        delete.setBorder(new RoundedBorder(10));
+        Border emptyBorder = new EmptyBorder(15, 5, 5, 5);
+        RoundedBorder roundedBorder = new RoundedBorder(10);
+        CompoundBorder compoundBorder = new CompoundBorder(emptyBorder, roundedBorder);
+        delete.setBorder(compoundBorder);
         delete.addActionListener(actionListenerDone);
         delete.setForeground(Color.white);
         delete.setBackground(Color.black);
